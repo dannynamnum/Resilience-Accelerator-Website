@@ -3,170 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resilience Accelerator — Home (Draft Mockup)</title>
+<title>Southwest Florida Resilience Accelerator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --graphite:#1a1c20; --deep:#0e0f12; --paper:#f5f5f1; --ink:#16181c;
-  --aqua:#22e3c7; --aqua-2:#8ff3e2; --aqua-ink:#0c8f7d;
-  --slate:#8a93a1; --line:rgba(18,24,28,.14);
-  --rail:clamp(288px, 29vw, 400px);
-  --display:'Geist', sans-serif;
-  --body:'Geist', sans-serif;
-  --mono:'Geist Mono', monospace;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5}
-a{color:inherit}
-img{display:block;width:100%;height:100%;object-fit:cover}
-
-/* ---------- SIDEBAR ---------- */
-.rail{position:fixed;top:0;left:0;width:var(--rail);height:100vh;background:var(--graphite);color:#fff;
-  display:flex;flex-direction:column;padding:38px 34px;z-index:20}
-.brand .logo{width:200px;height:auto;object-fit:contain}
-.brand .partner{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua-2);margin-top:28px;font-weight:500}
-.brand h1{font-family:var(--display);font-weight:800;font-size:23px;line-height:1.06;letter-spacing:-.01em;margin-top:14px}
-.hamburger{display:none}
-nav{margin-top:54px}
-nav a{position:relative;display:block;font-family:var(--display);font-weight:500;font-size:19px;padding:9px 0;color:rgba(255,255,255,.88);
-  text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1);transition:color .2s}
-nav a:first-child{border-top:1px solid rgba(255,255,255,.1)}
-nav a:hover{color:#fff}
-nav a.active{color:var(--aqua)}
-nav a.active::before{content:"";position:absolute;left:-18px;top:50%;transform:translateY(-50%);width:3px;height:20px;background:var(--aqua);border-radius:2px}
-.rail-foot{margin-top:auto;font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.8}
-.rail-foot a{text-decoration:underline;text-underline-offset:3px}
-.draft{display:inline-block;margin-bottom:16px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--aqua-2);border:1px solid rgba(255,255,255,.28);border-radius:100px;padding:4px 11px}
-
-/* ---------- MAIN ---------- */
-main{margin-left:var(--rail)}
-section{position:relative}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;font-weight:500;color:var(--aqua-ink)}
-.arrowlink{display:inline-block;font-family:var(--display);font-weight:500;font-size:17px;text-decoration:none;
-  border-bottom:2px solid currentColor;padding-bottom:2px;color:var(--aqua-ink)}
-.arrowlink:hover{opacity:.7}
-.pad{padding:clamp(64px,9vw,130px) min(8vw,76px)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.seen{opacity:1;transform:none}
-
-/* ---------- HERO ---------- */
-.hero{height:100vh;min-height:600px;position:relative;overflow:hidden;background:var(--deep)}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease}
-.slide.on{opacity:1}
-.slide .ph{position:absolute;inset:0}
-.slide .ph::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg, rgba(14,15,18,.72), rgba(14,15,18,.15) 58%, transparent),
-  linear-gradient(0deg, rgba(14,15,18,.78), transparent 46%)}
-.slide .copy{position:absolute;left:min(8vw,76px);bottom:14vh;max-width:640px;color:#fff;z-index:2}
-.slide .copy .eyebrow{color:var(--aqua-2)}
-.slide h2{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.4vw,74px);line-height:.98;letter-spacing:-.02em;margin:16px 0 16px}
-.slide p{font-size:clamp(16px,1.4vw,20px);color:rgba(255,255,255,.9);max-width:440px;margin-bottom:26px}
-.slide .copy .arrowlink{color:#fff;border-color:var(--aqua)}
-.hero .bars{position:absolute;left:min(8vw,76px);bottom:8vh;display:flex;gap:8px;z-index:3}
-.hero .bars button{width:46px;height:4px;border:0;padding:0;cursor:pointer;background:rgba(255,255,255,.32);border-radius:2px;overflow:hidden}
-.hero .bars button span{display:block;height:100%;width:0;background:var(--aqua)}
-.hero .bars button.on span{width:100%;transition:width 6s linear}
-
-/* ---------- STATEMENT ---------- */
-.statement{display:grid;grid-template-columns:minmax(140px,.9fr) 2.4fr;gap:40px}
-.statement h3{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,50px);line-height:1.02;letter-spacing:-.015em}
-.statement .body{max-width:600px}
-.statement .body p{font-size:18px;color:#414b4e;margin:0 0 26px}
-
-/* ---------- ON-SITE BAND ---------- */
-.band{height:74vh;min-height:460px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.band .ph{position:absolute;inset:0}
-.band .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,15,18,.82),rgba(14,15,18,.28))}
-.band .inner{position:relative;z-index:2;color:#fff;padding:0 min(8vw,76px) 9vh}
-.band .eyebrow{color:var(--aqua-2)}
-.band .dates{font-family:var(--display);font-weight:800;font-size:clamp(34px,5vw,68px);letter-spacing:-.02em;line-height:1;margin:14px 0 14px}
-.band .dates small{display:block;font-family:var(--body);font-weight:500;font-size:16px;letter-spacing:.02em;color:rgba(255,255,255,.82);margin-top:14px}
-.band .arrowlink{color:#fff;border-color:var(--aqua)}
-
-/* ---------- COHORT ---------- */
-.cohort{background:#fff}
-.head-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:40px}
-.head-row h3{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.015em}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.card{position:relative;aspect-ratio:16/11;overflow:hidden;border-radius:3px;background:#ccc}
-.card .ph{position:absolute;inset:0;transition:transform .6s ease}
-.card:hover .ph{transform:scale(1.04)}
-.card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,11,14,.85),transparent 55%)}
-.card .c{position:absolute;left:26px;bottom:22px;right:26px;color:#fff;z-index:2}
-.card .c .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--aqua-2)}
-.card .c h4{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:-.01em;margin:6px 0 4px}
-.card .c p{font-size:14px;color:rgba(255,255,255,.82)}
-.note{margin-top:26px;font-size:14px;color:#7a858a;font-style:italic}
-
-/* ---------- ABOUT (image-backed, distinct from sidebar) ---------- */
-.about{position:relative;overflow:hidden;color:#fff}
-.about .ph{position:absolute;inset:0}
-.about .ph::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(10,11,14,.86),rgba(10,11,14,.5) 60%,rgba(10,11,14,.4))}
-.about .statement{position:relative;z-index:2}
-.about .statement h3{color:#fff}
-.about .eyebrow{color:var(--aqua-2)}
-.about .body p{color:rgba(255,255,255,.9)}
-.quote{border-left:3px solid var(--aqua);padding:4px 0 4px 22px;margin:6px 0 26px}
-.quote p{font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,25px);line-height:1.28;color:#fff}
-.quote cite{display:block;margin-top:14px;font-style:normal;font-size:13.5px;color:rgba(255,255,255,.68);letter-spacing:.02em}
-.about .arrowlink{color:var(--aqua-2);border-color:var(--aqua)}
-
-/* ---------- NEWS ---------- */
-.news .feature{display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center}
-.news .fimg{aspect-ratio:16/10;overflow:hidden;border-radius:3px;background:#ddd}
-.news h3{font-family:var(--display);font-weight:700;font-size:clamp(24px,2.6vw,38px);line-height:1.08;letter-spacing:-.01em;margin:14px 0 14px}
-.news .src{font-size:13px;color:#7a858a;margin-bottom:22px}
-
-/* ---------- FAQ ---------- */
-.faq{background:#fff}
-.faq .statement{align-items:start}
-.faq .qs{border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 0;font-family:var(--display);font-weight:500;font-size:clamp(18px,1.9vw,23px);display:flex;justify-content:space-between;gap:20px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--aqua-ink);font-weight:400}
-.faq details[open] summary::after{content:"–"}
-.faq details p{padding:0 0 22px;max-width:640px;color:#414b4e;font-size:16.5px}
-
-/* ---------- FOOTER ---------- */
-footer{background:var(--ink);color:#fff;padding:clamp(56px,7vw,90px) min(8vw,76px)}
-footer .partners{display:flex;gap:14px 34px;flex-wrap:wrap;font-family:var(--display);font-weight:500;font-size:clamp(18px,2vw,26px);color:rgba(255,255,255,.92);padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.14)}
-footer .partners span{color:var(--aqua)}
-footer .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:26px;font-size:14px;color:rgba(255,255,255,.6)}
-footer a{text-decoration:underline;text-underline-offset:3px}
-
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:900px){
-  :root{--rail:0px}
-  .rail{position:sticky;width:100%;height:auto;flex-direction:row;align-items:center;justify-content:space-between;padding:14px 20px}
-  .brand{display:flex;align-items:center}
-  .brand .logo{width:118px}
-  .brand .partner,.brand h1{display:none}
-  .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:40px;background:none;border:0;cursor:pointer;padding:8px}
-  .hamburger span{display:block;height:2px;width:100%;background:#fff;transition:transform .25s,opacity .2s}
-  .rail.open .hamburger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .rail.open .hamburger span:nth-child(2){opacity:0}
-  .rail.open .hamburger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  nav{position:absolute;top:100%;left:0;right:0;margin:0;background:var(--graphite);
-    display:flex;flex-direction:column;padding:0 20px;max-height:0;overflow:hidden;transition:max-height .32s ease}
-  .rail.open nav{max-height:80vh;padding:6px 20px 20px}
-  nav a{font-size:17px}
-  .rail-foot{display:none}
-  main{margin-left:0}
-  .statement{grid-template-columns:1fr;gap:18px}
-  .grid{grid-template-columns:1fr}
-  .news .feature{grid-template-columns:1fr;gap:22px}
-  .hero{height:82vh}
-}
-@media (prefers-reduced-motion:reduce){
-  .slide{transition:none}.hero .bars button.on span{transition:none;width:100%}.reveal{transition:none}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -178,18 +19,18 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   </div>
   <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav id="nav">
-    <a href="#" class="active">Overview</a>
-    <a href="#program">Program</a>
-    <a href="#schedule">Schedule</a>
-    <a href="#cohort">Participants</a>
-    <a href="#about">About Babcock Ranch</a>
-    <a href="#news">News</a>
-    <a href="#faq">FAQ</a>
+    <a href="index.html" class="active">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
   </nav>
   <div class="rail-foot">
     <span class="draft">Draft mockup</span><br>
-    <a href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
-    info@ambitionaccelerated.com
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
   </div>
 </aside>
 
@@ -197,15 +38,15 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   <section class="hero" id="hero">
     <div class="slide on">
       <div class="ph"><img src="img/hero-1.jpg" alt="Palm trees bending in storm winds on the Florida coast" style="object-position:center 42%"></div>
-      <div class="copy"><span class="eyebrow">The Program</span><h2>Building the next generation of resilience.</h2><p>An eight-week accelerator anchored at Babcock Ranch, America's first solar-powered town.</p><a class="arrowlink" href="#program">How the program works →</a></div>
+      <div class="copy"><span class="eyebrow">The Program</span><h2>Building the next generation of resilience.</h2><p>An eight-week accelerator anchored at Babcock Ranch, America's first solar-powered town.</p><a class="arrowlink" href="program.html">How the program works →</a></div>
     </div>
     <div class="slide">
       <div class="ph"><img src="img/hero-2.jpg" alt="Mangrove roots above and below the waterline"></div>
-      <div class="copy"><span class="eyebrow">On-Site Days</span><h2>Two days on campus.</h2><p>The cohort gathers at Babcock Ranch on October 26–27 and November 19–20, 2026.</p><a class="arrowlink" href="#schedule">See the schedule →</a></div>
+      <div class="copy"><span class="eyebrow">On-Site Days</span><h2>Two days on campus.</h2><p>The cohort gathers at Babcock Ranch on October 26–27 and November 19–20, 2026.</p><a class="arrowlink" href="schedule.html">See the schedule →</a></div>
     </div>
     <div class="slide">
       <div class="ph"><img src="img/hero-3.jpg" alt="A paper boat holding steady in rough water" style="object-position:center 55%"></div>
-      <div class="copy"><span class="eyebrow">The Cohort</span><h2>Ten founders. One mission.</h2><p>Meet the inaugural class building climate-resilience solutions.</p><a class="arrowlink" href="#cohort">Meet the participants →</a></div>
+      <div class="copy"><span class="eyebrow">The Cohort</span><h2>Ten founders. One mission.</h2><p>Meet the inaugural class building climate-resilience solutions.</p><a class="arrowlink" href="participants.html">Meet the participants →</a></div>
     </div>
     <div class="bars"><button data-i="0" class="on"><span></span></button><button data-i="1"><span></span></button><button data-i="2"><span></span></button></div>
   </section>
@@ -216,7 +57,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
       <div class="body">
         <h3>A statewide platform for company building, with a resilience focus at Babcock Ranch.</h3>
         <p style="margin-top:26px">The inaugural Southwest Florida Resilience Accelerator is part of Ambition Accelerated, the Florida Council of 100's statewide effort to build the next generation of American companies in Florida. Over an eight-week program, participants will be connected directly with CEOs, mentors, customers, and capital.</p>
-        <a class="arrowlink" href="#">How the program works →</a>
+        <a class="arrowlink" href="program.html">How the program works →</a>
       </div>
     </div>
   </section>
@@ -225,23 +66,35 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <div class="ph"><img src="img/band.jpg" alt="Founders Square at Babcock Ranch"></div>
     <div class="inner reveal">
       <span class="eyebrow">Schedule</span>
-      <div class="dates">Oct 26–27 · Nov 19–20<small>Two on-site days at Babcock Ranch, within an eight-week program running the week of Oct 12 through Dec 7.</small></div>
-      <a class="arrowlink" href="#">See the schedule →</a>
+      <div class="dates">Oct 26–27 · Nov 19–20<small>Two days at Babcock Ranch, within an eight-week program running the week of Oct 12 through Dec 7.</small></div>
+      <a class="arrowlink" href="schedule.html">See the schedule →</a>
     </div>
   </section>
 
   <section class="pad cohort" id="cohort">
     <div class="head-row reveal">
       <div><span class="eyebrow">Participants</span><h3 style="margin-top:14px">Meet the founders</h3></div>
-      <a class="arrowlink" href="#">Meet the participants →</a>
+      <div class="prail-nav">
+        <button class="railbtn" id="prev" aria-label="Previous founders">‹</button>
+        <button class="railbtn" id="next" aria-label="Next founders">›</button>
+      </div>
     </div>
-    <div class="grid reveal">
-      <div class="card"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Resilient Infrastructure</span><h4>Venture 01</h4><p>Placeholder — one line on the venture.</p></div></div>
-      <div class="card"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Natural Systems</span><h4>Venture 02</h4><p>Placeholder — one line on the venture.</p></div></div>
-      <div class="card"><div class="ph"><img src="img/card-3.jpg" alt=""></div><div class="c"><span class="tag">Planning & Design</span><h4>Venture 03</h4><p>Placeholder — one line on the venture.</p></div></div>
-      <div class="card"><div class="ph"><img src="img/card-4.jpg" alt=""></div><div class="c"><span class="tag">Inspection & Assessment</span><h4>Venture 04</h4><p>Placeholder — one line on the venture.</p></div></div>
+    <div class="prail-wrap reveal">
+      <div class="prail" id="prail">
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Natural Systems</span><h4>Venture 01</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Inspection</span><h4>Venture 02</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-3.jpg" alt=""></div><div class="c"><span class="tag">Infrastructure</span><h4>Venture 03</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-4.jpg" alt=""></div><div class="c"><span class="tag">Planning and Design</span><h4>Venture 04</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Natural Systems</span><h4>Venture 05</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Inspection</span><h4>Venture 06</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-3.jpg" alt=""></div><div class="c"><span class="tag">Infrastructure</span><h4>Venture 07</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-4.jpg" alt=""></div><div class="c"><span class="tag">Planning and Design</span><h4>Venture 08</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Natural Systems</span><h4>Venture 09</h4></div></a>
+        <a class="pcard2" href="participants.html"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Inspection</span><h4>Venture 10</h4></div></a>
+      </div>
     </div>
-    <p class="note">Cohort of ten announced late September — cards and venture pages populate then.</p>
+    <div style="margin-top:20px"><a class="arrowlink" href="participants.html">Meet the participants →</a></div>
+    <p class="note">Cohort of ten announced late September — swipe or use the arrows to browse. Cards and venture pages populate then.</p>
   </section>
 
   <section class="pad about" id="about">
@@ -255,7 +108,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
           <p>Anchoring the new Southwest Florida Resilience Accelerator at Babcock Ranch underscores our vision to be the most sustainable, innovative, and resilient town in America.</p>
           <cite>Lucienne Pears, VP of Economic and Business Development, Kitson &amp; Partners</cite>
         </div>
-        <a class="arrowlink" href="#">About Babcock Ranch →</a>
+        <a class="arrowlink" href="about.html">About Babcock Ranch →</a>
       </div>
     </div>
   </section>
@@ -267,7 +120,22 @@ footer a{text-decoration:underline;text-underline-offset:3px}
         <span class="eyebrow">News</span>
         <h3>Coverage of the program and its founders lands here.</h3>
         <div class="src">Placeholder headline · Outlet · Date</div>
-        <a class="arrowlink" href="#">Read the latest →</a>
+        <a class="arrowlink" href="news.html">Read the latest →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pad reel" id="follow">
+    <div class="reveal">
+      <span class="eyebrow">Follow Along · Proposed</span>
+      <div class="wrap" style="margin-top:14px">
+        <div>
+          <h3>Watch the story unfold.</h3>
+          <p style="font-size:18px;color:#414b4e;max-width:520px;margin:18px 0 0">A spot on the homepage for a social reel, so visitors see the accelerator in motion. We'd embed the latest video from the Ambition Accelerated channels right here.</p>
+          <div class="handles">@AmbitionAccel · @ambitionaccelerated</div>
+          <p class="note">Placeholder — an optional section we can wire to a live reel or embed whenever you're ready.</p>
+        </div>
+        <div class="frame"><div class="play"></div><div class="lbl">Reel placeholder</div></div>
       </div>
     </div>
   </section>
@@ -279,9 +147,9 @@ footer a{text-decoration:underline;text-underline-offset:3px}
         <div class="qs">
           <details open><summary>What is the Southwest Florida Resilience Accelerator?</summary><p>It's the resilience track of Ambition Accelerated, a statewide initiative from the Florida Council of 100, anchored at Babcock Ranch.</p></details>
           <details><summary>Who takes part?</summary><p>Ten selected founders make up the inaugural cohort, building climate-resilience technologies and solutions.</p></details>
-          <details><summary>When are the on-site days?</summary><p>Two on-site sessions at Babcock Ranch: October 26–27 and November 19–20, 2026.</p></details>
+          <details><summary>When are the Babcock sessions?</summary><p>Two sessions at Babcock Ranch: October 26–27 and November 19–20, 2026.</p></details>
         </div>
-        <a class="arrowlink" href="#" style="margin-top:28px">See all FAQs →</a>
+        <a class="arrowlink" href="faq.html" style="margin-top:28px">See all FAQs →</a>
       </div>
     </div>
   </section>
@@ -290,7 +158,7 @@ footer a{text-decoration:underline;text-underline-offset:3px}
     <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
     <div class="fbot">
       <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
-      <div><a href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · info@ambitionaccelerated.com</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
     </div>
   </footer>
 </main>
@@ -317,11 +185,40 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
   document.getElementById('nav').addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
 })();
+/* Scroll-spy: highlights the sidebar item for the section in view, while each
+   link still navigates to its full page. Best of both — the menu tracks your
+   scroll on the home page, and clicking opens the dedicated page. */
 (function(){
-  const links=[...document.querySelectorAll('nav a')];
-  const map=links.filter(a=>a.getAttribute('href').length>1&&a.getAttribute('href').startsWith('#')).map(a=>({a,sec:document.querySelector(a.getAttribute('href'))})).filter(x=>x.sec);
-  const home=links[0];
-  window.addEventListener('scroll',()=>{const y=window.scrollY+window.innerHeight*.35;let cur=null;map.forEach(x=>{if(x.sec.offsetTop<=y)cur=x.a;});links.forEach(l=>l.classList.remove('active'));(cur||home).classList.add('active');},{passive:true});
+  var links=[].slice.call(document.querySelectorAll('nav a'));
+  var byFile={};
+  links.forEach(function(a){byFile[a.getAttribute('href')]=a;});
+  var map=[
+    {id:'hero',file:'index.html'},{id:'program',file:'program.html'},{id:'schedule',file:'schedule.html'},
+    {id:'cohort',file:'participants.html'},{id:'about',file:'about.html'},{id:'news',file:'news.html'},{id:'faq',file:'faq.html'}
+  ].map(function(m){return {sec:document.getElementById(m.id),link:byFile[m.file]};}).filter(function(x){return x.sec&&x.link;});
+  function onScroll(){
+    var y=window.scrollY+window.innerHeight*0.35, cur=map[0];
+    map.forEach(function(x){if(x.sec.offsetTop<=y)cur=x;});
+    links.forEach(function(l){l.classList.remove('active');});
+    if(cur&&cur.link)cur.link.classList.add('active');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+(function(){
+  var rail=document.getElementById('prail'), prev=document.getElementById('prev'), next=document.getElementById('next');
+  if(!rail) return;
+  function step(){ return Math.max(rail.clientWidth*0.8, 200); }
+  function update(){
+    var max=rail.scrollWidth-rail.clientWidth-2;
+    if(prev) prev.disabled = rail.scrollLeft<=2;
+    if(next) next.disabled = rail.scrollLeft>=max;
+  }
+  if(prev) prev.addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'});});
+  if(next) next.addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'});});
+  rail.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
 })();
 </script>
 </body>

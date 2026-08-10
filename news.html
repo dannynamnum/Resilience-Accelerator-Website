@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — Southwest Florida Resilience Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html" class="active">News</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">News</span>
+    <h1>Coverage</h1>
+    <p class="lead">A running list of press on the program and its founders, newest first.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Work in progress</div>
+    <p><strong>This is drafted as a press-only feed, with social kept on the Ambition Accelerated handles.</strong> We can seed it with the Babcock and FC100 announcements, then add coverage as it's secured. The items below are placeholders.</p>
+    <p>Open: any coverage you already have that we can seed with, whether to include the two press releases as the first entries, and who sends new links as they come in.</p>
+  </div>
+
+  <div class="prose" style="padding-top:clamp(20px,3vw,32px)">
+    <div class="newslist">
+      <div class="item"><span class="meta">Placeholder</span><h3>Headline of the coverage lands here<span class="src">Outlet · Month 2026</span></h3></div>
+      <div class="item"><span class="meta">Placeholder</span><h3>Second story, once we start collecting links<span class="src">Outlet · Month 2026</span></h3></div>
+      <div class="item"><span class="meta">Placeholder</span><h3>Babcock and FC100 announcement (proposed first entry)<span class="src">Press release · 2026</span></h3></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>

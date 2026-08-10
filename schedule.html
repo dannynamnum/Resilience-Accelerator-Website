@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schedule — Southwest Florida Resilience Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html" class="active">Schedule</a>
+    <a href="participants.html">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<!-- Password gate. NOTE: this is a light, client-side gate using a single shared
+     password. It keeps the public out casually; it is not strong security (the
+     password lives in this page). If real accounts/logins are ever needed, that's
+     a separate build. Change the password below in one place. -->
+<div id="gate" class="gate">
+  <div class="card2">
+    <div class="lock">Protected · Participants only</div>
+    <h1>Enter password</h1>
+    <p>The schedule is for program participants. Enter the shared password to view the on-site agenda.</p>
+    <form id="gateForm" autocomplete="off">
+      <input id="pw" type="password" placeholder="Password" aria-label="Password" autocomplete="off">
+      <button type="submit">View schedule</button>
+    </form>
+    <div class="err" id="err"></div>
+  </div>
+</div>
+
+<main id="sched" hidden>
+  <div class="page-head">
+    <span class="eyebrow">Schedule</span>
+    <h1>On-site at Babcock Ranch</h1>
+    <p class="lead">The cohort gathers at Babcock Ranch for two sessions of hands-on programming on building resilient communities.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Work in progress</div>
+    <p><strong>The dates are locked; the detailed agenda is still to come.</strong> Once the curriculum is finalized, session titles, times, and speakers drop into the layout below. This page is password-protected so it stays participant-facing until the agenda is ready.</p>
+    <p>Open: the finalized agenda for both sessions, how much detail to show publicly, and any logistics worth adding, such as location on campus, parking, and what to bring.</p>
+  </div>
+
+  <div class="prose">
+    <h2>The two sessions</h2>
+    <ul>
+      <li><strong>Session 1:</strong> October 26–27, 2026</li>
+      <li><strong>Session 2:</strong> November 19–20, 2026</li>
+    </ul>
+    <p>The wider program runs October 13 through December. These two sessions are the in-person days at Babcock Ranch.</p>
+
+    <h2>Agenda</h2>
+    <p>For each session, a clean day-by-day layout, formatted to read easily on a phone since attendees will pull it up on-site. Coming once the curriculum is confirmed:</p>
+    <div class="agenda">
+      <div class="day"><div class="d">Session 1 · Day 1</div><div class="dt">Oct 26</div><div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>
+      <div class="day"><div class="d">Session 1 · Day 2</div><div class="dt">Oct 27</div><div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>
+      <div class="day"><div class="d">Session 2 · Day 1</div><div class="dt">Nov 19</div><div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>
+      <div class="day"><div class="d">Session 2 · Day 2</div><div class="dt">Nov 20</div><div class="ln"></div><div class="ln s"></div><div class="ln"></div></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  // ---- single shared password (change this value only) ----
+  var PASS = "babcock2026";
+  var KEY = "ra_sched_ok";
+  var gate = document.getElementById('gate');
+  var sched = document.getElementById('sched');
+  var form = document.getElementById('gateForm');
+  var pw = document.getElementById('pw');
+  var err = document.getElementById('err');
+  function unlock(){ gate.style.display='none'; sched.hidden=false; }
+  try{ if(sessionStorage.getItem(KEY)==='1') unlock(); }catch(e){}
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(pw.value === PASS){ try{sessionStorage.setItem(KEY,'1');}catch(e){} unlock(); }
+    else { err.textContent = "That password isn't right. Try again."; pw.value=''; pw.focus(); }
+  });
+})();
+(function(){
+  var rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',function(){var o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  var nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',function(e){if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>

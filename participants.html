@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Participants — Southwest Florida Resilience Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html" class="active">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">Participants</span>
+    <h1>Meet the founders</h1>
+    <p class="lead">Ten founders building the next generation of resilience technologies. Learn more about their ventures.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Work in progress</div>
+    <p><strong>The cohort is announced around the end of September.</strong> Once it is, each of the ten ventures gets a card here and its own page. The layout below is the structure we'll drop the real founders into.</p>
+    <p>For each company we'll need: company name and logo, founder name(s), title, and a headshot, a two to three sentence description, which of the four focus areas they fall under, website and social links, and whether you want a short video interview on their page.</p>
+  </div>
+
+  <section class="pad cohort" style="padding-top:clamp(20px,3vw,32px)">
+    <div class="grid">
+      <div class="card"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Natural Systems Modeling</span><h4>Venture 01</h4><p>Placeholder — one line on the venture.</p></div></div>
+      <div class="card"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Inspections and Assessment</span><h4>Venture 02</h4><p>Placeholder — one line on the venture.</p></div></div>
+      <div class="card"><div class="ph"><img src="img/card-3.jpg" alt=""></div><div class="c"><span class="tag">Resilient Infrastructure</span><h4>Venture 03</h4><p>Placeholder — one line on the venture.</p></div></div>
+      <div class="card"><div class="ph"><img src="img/card-4.jpg" alt=""></div><div class="c"><span class="tag">Planning and Design</span><h4>Venture 04</h4><p>Placeholder — one line on the venture.</p></div></div>
+      <div class="card"><div class="ph"><img src="img/card-1.jpg" alt=""></div><div class="c"><span class="tag">Focus area</span><h4>Venture 05</h4><p>Placeholder — one line on the venture.</p></div></div>
+      <div class="card"><div class="ph"><img src="img/card-2.jpg" alt=""></div><div class="c"><span class="tag">Focus area</span><h4>Venture 06</h4><p>Placeholder — one line on the venture.</p></div></div>
+    </div>
+    <p class="note">Placeholder grid. The ten founders and their ventures populate here once the cohort is announced.</p>
+  </section>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>

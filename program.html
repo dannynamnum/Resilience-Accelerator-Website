@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program — Southwest Florida Resilience Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html" class="active">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">The Program</span>
+    <h1>How the program works</h1>
+    <p class="lead">A statewide platform for company building, with a resilience focus anchored at Babcock Ranch. The inaugural cohort launches this fall.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Work in progress</div>
+    <p><strong>This page is content-complete and reviewed by the Finn team.</strong> Still open: whether to add an "apply" link before the application window closes on August 21.</p>
+  </div>
+
+  <div class="prose">
+    <h2>What it is</h2>
+    <p>The Southwest Florida Resilience Accelerator is the inaugural resilience track of Ambition Accelerated, the Florida Council of 100's statewide effort to build the next generation of American companies in Florida. It connects founders directly with CEOs, mentors, customers, and capital, and anchors that work at Babcock Ranch, America's first solar-powered town.</p>
+    <p>The inaugural cohort is focused on companies developing technologies and solutions for climate resilience: the systems, designs, and services that help communities withstand storms, heat, flooding, and other environmental stress.</p>
+
+    <h2>Focus areas</h2>
+    <p>The cohort spans four areas of resilience work:</p>
+    <ul>
+      <li><strong>Natural systems modeling.</strong> Understanding and predicting how natural systems respond to climate stress.</li>
+      <li><strong>Inspections, assessment and certification.</strong> Measuring, verifying, and certifying how structures and systems perform.</li>
+      <li><strong>Resilient real estate and infrastructure systems.</strong> Energy, water, and built systems designed to keep working through storms and prolonged stress.</li>
+      <li><strong>Purpose-built planning and design.</strong> Methods for building communities that anticipate climate risk from the start.</li>
+    </ul>
+
+    <h2>How it works</h2>
+    <p>Ten founders are selected for an eight-week hybrid program running from mid-October through early December, with two sessions at Babcock Ranch on October 26–27 and November 19–20, 2026. Over those weeks, participants receive mentorship from executives in resilience and sustainability, form strategic partnerships to pilot and scale their solutions, gain accelerated entry into Florida's market, and connect with potential investors.</p>
+    <p>The program wraps with a showcase, where founders present their work to an audience of potential funders and partners.</p>
+
+    <h2>Why Babcock Ranch</h2>
+    <p>Babcock Ranch is a recognized leader in climate-resilient development and a living laboratory, a real-world environment where founders can pilot, test, and scale their solutions. The Accelerator program allows Babcock Ranch to leverage its expertise to help founders who are developing solutions to help other communities improve their resiliency.</p>
+    <p><a href="about.html">More about Babcock Ranch →</a></p>
+  </div>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>

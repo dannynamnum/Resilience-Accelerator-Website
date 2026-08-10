@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Southwest Florida Resilience Accelerator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html" class="active">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">FAQ</span>
+    <h1>Frequently asked questions</h1>
+    <p class="lead">The essentials on the program, the cohort, and the on-site days at Babcock Ranch.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Work in progress</div>
+    <p><strong>Answers are drafted from what we know so far and are pending Finn's review.</strong> The "How do companies apply?" line comes down after the application window closes on August 21. If there are questions you get asked often that aren't here, send them over and I'll add them.</p>
+  </div>
+
+  <section class="pad faq" style="padding-top:clamp(20px,3vw,32px)">
+    <div class="qs">
+      <details open><summary>What is the Southwest Florida Resilience Accelerator?</summary><p>It's the resilience track of Ambition Accelerated, a statewide initiative from the Florida Council of 100, anchored at Babcock Ranch. Its inaugural cohort focuses on companies building climate-resilience technologies and solutions.</p></details>
+      <details><summary>Who runs it?</summary><p>Ambition Accelerated is led by the Florida Council of 100 and its Foundation. Babcock Ranch, developed by Kitson &amp; Partners, is the presenting partner and host for the Southwest Florida track.</p></details>
+      <details><summary>What does the program focus on?</summary><p>Four areas: natural systems modeling; inspections, assessment and certification; resilient real estate and infrastructure systems; and purpose-built planning and design.</p></details>
+      <details><summary>Who takes part?</summary><p>Ten selected founders make up the inaugural cohort.</p></details>
+      <details><summary>How long is it, and when?</summary><p>An eight-week hybrid program running October 13 through December, with two sessions at Babcock Ranch on October 26–27 and November 19–20, 2026.</p></details>
+      <details><summary>Where is it held?</summary><p>Programming is at Babcock Ranch in Southwest Florida, with virtual sessions in between.</p></details>
+      <details><summary>How do companies apply?</summary><p>Applications are open through August 21 at <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">ambitionaccelerated.com/southwest</a>.</p></details>
+      <details><summary>How does it connect to Babcock Ranch?</summary><p>Babcock is America's first solar-powered town and a leader in climate-resilient development, which makes it a real-world testbed for the founders' solutions.</p></details>
+      <details><summary>How can I follow along?</summary><p>Through this site's News page and the Ambition Accelerated channels on LinkedIn, X (@AmbitionAccel), Instagram (@ambitionaccelerated), and Facebook.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>
