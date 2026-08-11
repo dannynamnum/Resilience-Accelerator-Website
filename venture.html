@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Venture Name | Southwest Florida Resilience Accelerator</title>
+<meta name="description" content="Venture detail page template for the Southwest Florida Resilience Accelerator cohort.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="https://babcockranch.com/favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<aside class="rail" id="rail">
+  <div class="brand">
+    <img class="logo" src="img/babcock-white.png" alt="Babcock Ranch">
+    <div class="partner">Presenting Partner</div>
+    <h1>Southwest&nbsp;Florida<br>Resilience&nbsp;Accelerator</h1>
+  </div>
+  <button class="hamburger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html">Overview</a>
+    <a href="program.html">Program</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="participants.html" class="active">Participants</a>
+    <a href="about.html">About Babcock Ranch</a>
+    <a href="news.html">News</a>
+    <a href="faq.html">FAQ</a>
+  </nav>
+  <div class="rail-foot">
+    <span class="draft">Draft mockup</span><br>
+    <a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a><br>
+    lpears@kitsonpartners.com
+  </div>
+</aside>
+
+<main>
+  <div class="page-head">
+    <span class="eyebrow">Natural Systems Modeling</span>
+    <h1>Venture Name</h1>
+    <p class="lead">One line on what the venture does and the resilience problem it solves.</p>
+  </div>
+
+  <div class="status-note">
+    <div class="lbl">Template</div>
+    <p><strong>This is the layout each venture gets once the cohort is announced.</strong> Duplicate this page per company and replace the placeholders with the real venture name, logo, founder photo, description, focus area, and links. Delete the video block if there's no interview.</p>
+  </div>
+
+  <div class="prose">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:34px">
+      <div style="width:58px;height:58px;border-radius:50%;background:linear-gradient(160deg,#23262d,#0e0f12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);font-weight:600;font-size:17px;flex:none">FN</div>
+      <div>
+        <div style="font-weight:600;font-size:17px;color:var(--ink)">Founder Name</div>
+        <div style="font-size:14px;color:var(--slate)">Founder and CEO, Venture Name</div>
+      </div>
+    </div>
+
+    <h2>About the venture</h2>
+    <p>Two to three sentences on the company: the problem it solves, how its solution works, and who it's for. Keep it plain and specific, the way the founder would describe it.</p>
+    <p>A second short paragraph on traction or where the venture is headed, if useful. Otherwise this can be a single paragraph.</p>
+
+    <h2>Focus area</h2>
+    <p>Which of the four areas this venture falls under: natural systems modeling; inspections, assessment and certification; resilient real estate and infrastructure systems; or purpose-built planning and design.</p>
+
+    <h2>Links</h2>
+    <p><a href="#">Visit the website →</a><br><a href="#">Founder on LinkedIn →</a></p>
+
+    <h2>Video</h2>
+    <p>Optional short interview with the founder. Remove this section if there isn't one.</p>
+    <div style="aspect-ratio:16/9;max-width:640px;background:linear-gradient(160deg,#22252b,#0e0f12);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--aqua-2);font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;margin-top:8px">Video placeholder</div>
+
+    <p style="margin-top:40px"><a href="participants.html">← All participants</a></p>
+  </div>
+
+  <footer>
+    <div class="partners">Ambition Accelerated <span>·</span> Babcock Ranch</div>
+    <div class="fbot">
+      <div>Southwest Florida Resilience Accelerator · Anchored at Babcock Ranch</div>
+      <div><a target="_blank" rel="noopener noreferrer" href="https://ambitionaccelerated.com/southwest">AmbitionAccelerated.com</a> · lpears@kitsonpartners.com</div>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const rail=document.getElementById('rail'), burger=document.getElementById('burger');
+  if(burger)burger.addEventListener('click',()=>{const o=rail.classList.toggle('open');burger.setAttribute('aria-expanded',o);});
+  const nav=document.getElementById('nav');
+  if(nav)nav.addEventListener('click',e=>{if(e.target.tagName==='A')rail.classList.remove('open');});
+})();
+</script>
+</body>
+</html>

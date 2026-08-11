@@ -174,9 +174,11 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 /* news list */
 .newslist{max-width:820px;border-top:1px solid var(--line);margin-top:8px}
 .newslist .item{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.newslist .item .meta{font-family:var(--mono);font-size:12px;color:var(--slate);white-space:nowrap;letter-spacing:.02em}
+.newslist .item .meta{font-family:var(--mono);font-size:12px;color:var(--slate);white-space:nowrap;letter-spacing:.02em;width:104px;flex-shrink:0}
 .newslist .item h3{font-family:var(--display);font-weight:600;font-size:clamp(17px,1.7vw,20px);letter-spacing:-.01em;line-height:1.25}
 .newslist .item h3 .src{display:block;font-family:var(--body);font-weight:400;font-size:13px;color:var(--slate);margin-top:5px}
+.newslist a{color:var(--ink);text-decoration:none}
+.newslist a:hover{color:var(--aqua-ink);text-decoration:underline;text-underline-offset:3px}
 
 /* password gate */
 .gate{margin-left:var(--rail);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px min(8vw,76px);background:var(--deep)}
@@ -209,6 +211,24 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .reel .frame .play{width:62px;height:62px;border-radius:50%;background:var(--aqua);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(34,227,199,.35)}
 .reel .frame .play::after{content:"";border-left:17px solid #0e0f12;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
 .reel .frame .lbl{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--aqua-2)}
+
+/* large quote block with photo (About) */
+.qblock{display:flex;gap:28px;align-items:flex-start;margin:6px 0 38px;max-width:880px}
+.qblock.right{flex-direction:row-reverse}
+.qblock .photo{width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:center 22%;flex:none;
+  border:3px solid rgba(34,227,199,.5);background:#dddad2}
+.qblock .qbody{flex:1}
+.qblock .qt{font-family:var(--display);font-weight:500;font-size:clamp(19px,2vw,25px);line-height:1.36;color:var(--ink);margin:0}
+.qblock cite{display:block;margin-top:14px;font-style:normal;font-size:13.5px;color:var(--slate);letter-spacing:.01em}
+
+/* light testimonial bands (About quotes) */
+.tband{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px 36px;display:flex;gap:26px;
+  align-items:flex-start;margin:6px 0 16px;max-width:880px;box-shadow:0 10px 34px rgba(0,0,0,.05)}
+.tband:last-child{margin-bottom:0}
+.tband .ph{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:center 22%;
+  border:3px solid rgba(34,227,199,.55);flex:none}
+.tband .qt{font-family:var(--display);font-weight:500;font-size:clamp(17px,1.7vw,21px);line-height:1.45;color:var(--ink);margin:0}
+.tband cite{display:block;margin-top:14px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--aqua-ink)}
 
 /* participant rail (home Participants section) */
 .prail-nav{display:flex;gap:8px}
@@ -258,6 +278,9 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .reel .frame{max-width:230px}
   .prail-nav{display:none}
   .pcard2{flex:0 0 76%}
+  .qblock,.qblock.right{flex-direction:column;gap:16px}
+  .qblock .photo{width:96px;height:96px}
+  .tband{flex-direction:column;gap:16px;padding:26px 24px}
   .hero{height:82vh}
   .gate{margin-left:0}
   .newslist .item{flex-direction:column;gap:6px}
