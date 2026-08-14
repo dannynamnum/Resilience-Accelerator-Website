@@ -129,6 +129,11 @@ footer .partners{display:flex;gap:14px 34px;flex-wrap:wrap;font-family:var(--dis
 footer .partners span{color:var(--aqua)}
 footer .fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:26px;font-size:14px;color:rgba(255,255,255,.6)}
 footer a{text-decoration:underline;text-underline-offset:3px}
+footer .footer-social{display:flex;gap:12px;margin:22px 0 0}
+footer .footer-social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .2s,color .2s}
+footer .footer-social a:hover{background:var(--aqua);color:var(--deep)}
+footer .footer-social svg{width:18px;height:18px;fill:currentColor}
 
 /* ============ INTERIOR PAGES ============ */
 .page-head{padding:clamp(64px,9vw,120px) min(8vw,76px) 0}
