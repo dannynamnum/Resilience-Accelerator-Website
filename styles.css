@@ -214,6 +214,12 @@ footer a{text-decoration:underline;text-underline-offset:3px}
 .reel .frame .play::after{content:"";border-left:17px solid #0e0f12;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
 .reel .frame .lbl{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--aqua-2)}
 
+/* social icon links (home Follow Along) */
+.social-row{display:flex;gap:14px;margin-top:26px}
+.social-row a{width:52px;height:52px;border-radius:50%;background:var(--graphite);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:background .2s,transform .2s}
+.social-row a:hover{background:var(--aqua-ink);transform:translateY(-2px)}
+.social-row svg{width:22px;height:22px;fill:currentColor}
+
 /* large quote block with photo (About) */
 .qblock{display:flex;gap:28px;align-items:flex-start;margin:6px 0 38px;max-width:880px}
 .qblock.right{flex-direction:row-reverse}
